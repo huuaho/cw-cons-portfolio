@@ -1,0 +1,6 @@
+# Only the placeholder page is published for now.
+# Everything else (template mirror, planning notes, saved preview) stays local.
+/*
+!/.gitignore
+!/.github/
+!/under-construction/

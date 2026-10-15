@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Douglas Construction Solutions — Website under construction</title>
+  <meta name="description" content="Douglas Construction Solutions. Our new website is under construction.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    @font-face {
+      font-family: "Mulish";
+      font-style: normal;
+      font-display: swap;
+      font-weight: 200 1000;
+      src: url("fonts/mulish-latin-wght-normal.woff2") format("woff2");
+    }
+
+    :root {
+      --bg: #f6f5f2;
+      --text: #1d1d1f;
+      --muted: #5f5f66;
+      --line: #dcdad4;
+      --accent: #f2b705;
+      --stripe-dark: #1d1d1f;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141416;
+        --text: #f3f3f4;
+        --muted: #a3a3ab;
+        --line: #2c2c31;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Mulish", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Hazard-tape strip along the top and bottom edges */
+    .tape {
+      height: 14px;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--accent) 0 18px,
+        var(--stripe-dark) 18px 36px
+      );
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 16px;
+    }
+
+    .card {
+      max-width: 640px;
+      text-align: center;
+    }
+
+    .label {
+      display: inline-block;
+      margin: 0 0 28px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #1d1d1f;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 auto;
+      max-width: 34em;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    footer {
+      padding: 20px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="tape" aria-hidden="true"></div>
+
+  <main>
+    <div class="card">
+      <p class="label">Under construction</p>
+      <h1>Douglas Construction Solutions</h1>
+      <p>Our new website is being built. Please check back soon.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; <span id="year">2026</span> Douglas Construction Solutions
+  </footer>
+
+  <div class="tape" aria-hidden="true"></div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
