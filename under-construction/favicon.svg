@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#f2b705"/>
-  <text x="32" y="43" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#1d1d1f">DC</text>
+  <!-- Generic hard hat; placeholder until the client has a logo -->
+  <path d="M11 42C11 26 20 15 32 15s21 11 21 27z" fill="#f2b705"/>
+  <path d="M27 42V16.2a12 12 0 0 1 10 0V42z" fill="#d99f00"/>
+  <path d="M4 42h50c4 0 6 2 6 4v1c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3z" fill="#f2b705"/>
+  <path d="M4 46h56v1c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3z" fill="#d99f00"/>
 </svg>
