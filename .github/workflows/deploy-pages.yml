@@ -23,15 +23,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      # Placeholder at the root; draft site for client review at /test/, kept out of search engines.
-      - name: Assemble site
-        run: |
-          mkdir -p _site/test
-          cp -R under-construction/. _site/
-          cp -R site/. _site/test/
-          find _site/test -name '*.html' -exec sed -i 's|<head>|<head>\n  <meta name="robots" content="noindex, nofollow">|' {} +
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: under-construction
       - id: deployment
         uses: actions/deploy-pages@v4
