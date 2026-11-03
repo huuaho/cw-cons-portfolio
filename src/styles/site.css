@@ -1,0 +1,58 @@
+/* Additions on top of the template's styles (template.css). */
+
+/* Reveal timing from the template's js/config.js. */
+:root {
+  --kit-reveal-duration: 600ms;
+  --kit-reveal-distance: 20px;
+  --kit-reveal-easing: cubic-bezier(0, 0, 0.58, 1);
+}
+
+/* The menu toggle is a <button> here (an <a> in the template). */
+.burger {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+/* Service icons are SVGs (the template's Font Awesome subset has no construction icons);
+   same size and accent dot as the template's .service .fa-solid. */
+.service .service-icon {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  isolation: isolate; /* keeps the dot behind the icon but above the section background */
+}
+.service .service-icon svg {
+  position: relative;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+}
+.service .service-icon::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background: #ff2e63;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.hero-image img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.about-list li,
+.contact-details li {
+  margin-bottom: 0.5rem;
+}
+.contact-details .detail-label {
+  display: inline-block;
+  min-width: 4.5rem;
+  font-weight: 700;
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200">
+<rect width="1000" height="1200" fill="#d9d6cf"/>
+<path d="M0 1200 L320 660 L500 864 L700 540 L1000 960 L1000 1200 Z" fill="#c4c0b6"/>
+<circle cx="750" cy="300" r="70" fill="#c4c0b6"/>
+<text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Helvetica, Arial, sans-serif" font-size="50" fill="#6f6b62">Owner or team photo</text>
+</svg>

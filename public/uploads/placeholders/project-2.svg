@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1000" viewBox="0 0 1080 1000">
+<rect width="1080" height="1000" fill="#d9d6cf"/>
+<path d="M0 1000 L346 550 L540 720 L756 450 L1080 800 L1080 1000 Z" fill="#c4c0b6"/>
+<circle cx="810" cy="250" r="70" fill="#c4c0b6"/>
+<text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Helvetica, Arial, sans-serif" font-size="50" fill="#6f6b62">Project photo</text>
+</svg>
