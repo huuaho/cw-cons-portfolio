@@ -14,7 +14,16 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject((await params).slug);
-  return project ? { title: project.title, description: paragraphs(project.description)[0] } : {};
+  if (!project) return {};
+  const description = paragraphs(project.description)[0];
+  const url = `/projects/${project.slug}/`;
+  return {
+    title: project.title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { type: "article", title: project.title, description, url, images: project.cover ? [project.cover] : undefined },
+    twitter: { card: "summary_large_image", title: project.title, description, images: project.cover ? [project.cover] : undefined },
+  };
 }
 
 export default async function ProjectPage({ params }: Props) {

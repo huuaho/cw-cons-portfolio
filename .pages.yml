@@ -34,6 +34,22 @@ content:
       - name: year
         label: Year
         type: number
+      - name: layout
+        label: Page layout
+        type: select
+        options:
+          values:
+            - { name: carousel, label: Photo slider }
+            - { name: wide, label: One wide photo }
+            - { name: side, label: Photo beside the details }
+      - name: client
+        label: Client
+        type: string
+        description: Optional, e.g. Private homeowner.
+      - name: link
+        label: Link (shown as Visit)
+        type: string
+        description: Optional web address.
       - name: order
         label: Position on the home page
         type: number
@@ -158,8 +174,122 @@ content:
             description: Set to 0 to hide the box.
           - name: credentials
             label: Licences, insurance and memberships
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: detail
+                label: Detail
+                type: string
+              - name: year
+                label: Year or status
+                type: string
+      - name: stats
+        label: By the numbers (percentage rings)
+        type: object
+        fields:
+          - name: show
+            label: Show this section
+            type: boolean
+          - name: heading
+            label: Heading
             type: string
-            list: true
+          - name: intro
+            label: Intro line
+            type: string
+          - name: items
+            label: Figures
+            type: object
+            list:
+              max: 4
+              collapsible:
+                collapsed: true
+                summary: "{label} ({percent}%)"
+            fields:
+              - name: label
+                label: Label
+                type: string
+              - name: percent
+                label: Percentage (0–100)
+                type: number
+      - name: testimonials
+        label: Testimonials
+        type: object
+        fields:
+          - name: show
+            label: Show this section
+            type: boolean
+          - name: heading
+            label: Heading
+            type: string
+          - name: intro
+            label: Intro line
+            type: string
+          - name: items
+            label: Reviews
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - name: name
+                label: Client name
+                type: string
+              - name: role
+                label: Project or town
+                type: string
+              - name: quote
+                label: What they said
+                type: text
+              - name: photo
+                label: Photo
+                type: image
+      - name: news
+        label: News
+        type: object
+        fields:
+          - name: show
+            label: Show this section
+            type: boolean
+          - name: heading
+            label: Heading
+            type: string
+          - name: intro
+            label: Intro line
+            type: string
+          - name: items
+            label: Posts
+            type: object
+            list:
+              max: 4
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: date
+                label: Date
+                type: date
+              - name: author
+                label: Author
+                type: string
+              - name: category
+                label: Category
+                type: string
+              - name: image
+                label: Photo
+                type: image
+              - name: link
+                label: Link (optional)
+                type: string
       - name: contact
         label: Contact section
         type: object

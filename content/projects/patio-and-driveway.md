@@ -3,6 +3,9 @@ title: Driveway and walkways
 category: Concrete
 location: Town two
 year: 2023
+layout: wide
+client: Private homeowner
+link: ''
 order: 5
 cover: /uploads/placeholders/photos/driveway-1.jpg
 photos:

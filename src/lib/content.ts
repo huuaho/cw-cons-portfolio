@@ -53,10 +53,25 @@ export type HomeContent = {
     story: string;
     image: string;
     yearsInBusiness: number;
-    credentials: string[];
+    credentials: { title: string; detail: string; year: string }[];
+  };
+  stats: { show: boolean; heading: string; intro: string; items: { label: string; percent: number }[] };
+  testimonials: {
+    show: boolean;
+    heading: string;
+    intro: string;
+    items: { name: string; role: string; quote: string; photo: string }[];
+  };
+  news: {
+    show: boolean;
+    heading: string;
+    intro: string;
+    items: { title: string; date: string; author: string; category: string; image: string; link: string }[];
   };
   contact: { heading: string; intro: string };
 };
+
+export type ProjectLayout = "carousel" | "wide" | "side";
 
 export type Project = {
   slug: string;
@@ -65,6 +80,9 @@ export type Project = {
   location: string;
   year: number | string;
   order: number;
+  layout: ProjectLayout;
+  client: string;
+  link: string;
   cover: string;
   photos: string[];
   description: string;
@@ -96,6 +114,9 @@ export function getProjects(): Project[] {
         location: data.location ?? "",
         year: data.year ?? "",
         order: typeof data.order === "number" ? data.order : 999,
+        layout: ["carousel", "wide", "side"].includes(data.layout) ? data.layout : "carousel",
+        client: data.client ?? "",
+        link: data.link ?? "",
         cover: data.cover ?? data.photos?.[0] ?? "",
         photos: (data.photos ?? []).filter(Boolean),
         description: data.description ?? "",

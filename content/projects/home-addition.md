@@ -3,6 +3,9 @@ title: Two-storey addition
 category: Addition
 location: Town two
 year: 2025
+layout: carousel
+client: Private homeowner
+link: ''
 order: 2
 cover: /uploads/placeholders/photos/addition-1.jpg
 photos:

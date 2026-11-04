@@ -16,12 +16,21 @@ pnpm lint && pnpm typecheck
 | Path | What |
 |---|---|
 | `content/site.json` | Business details (name, phone, email, address, hours, areas, social links, search text) |
-| `content/home.json` | Home page text and photos (hero, services, our work, about, contact) |
-| `content/projects/*.md` | One file per project (frontmatter only); the filename is the page address |
+| `content/home.json` | Home page text and photos (hero, our work, services, about, by the numbers, testimonials, news, contact; the last three can be hidden) |
+| `content/projects/*.md` | One file per project (frontmatter only); the filename is the page address; `layout` picks one of three project layouts |
 | `public/uploads/` | Photos uploaded through Pages CMS; `placeholders/photos/` holds stand-in photos from Wikimedia Commons (credits and licences in `PLACEHOLDER-CREDITS.md`; replace or credit before launch) |
 | `.pages.yml` | The editing forms Pages CMS shows; keep in step with `src/lib/content.ts` |
 | `src/styles/template.css` | The template's stylesheet, unchanged except for absolute font/image paths |
 | `src/styles/site.css` | Our additions |
+
+## Elements page
+
+`/elements/` is the template's showcase of interface pieces (accordion, lightbox gallery, video pop-up, form, slider). It is not in the menu and is hidden from search engines; use it as a reference when adding sections.
+
+## Optional settings at build time
+
+- `NEXT_PUBLIC_SITE_URL`: the site address for social previews (default `https://douglasconstructionsolutions.com`)
+- `NEXT_PUBLIC_GA_ID`: turns on Google Analytics 4
 
 ## Contact form
 

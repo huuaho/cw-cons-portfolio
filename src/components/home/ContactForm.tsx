@@ -1,42 +1,20 @@
 "use client";
 
-// Quote request form. Until the Cloudflare function exists (NEXT_PUBLIC_CONTACT_ENDPOINT unset),
-// submitting explains that and points to the phone and email instead.
-import { useState, type FormEvent } from "react";
-
-const ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT;
-
-type Status = { kind: "" | "is-sending" | "is-success" | "is-error"; text: string };
+// Quote request form (the template's contact form). Until the Cloudflare function exists
+// (NEXT_PUBLIC_CONTACT_ENDPOINT unset), submitting explains that and gives the phone and email.
+import { FormStatusLine, useKitForm } from "@/components/useKitForm";
 
 export default function ContactForm({ phone, email }: { phone: string; email: string }) {
-  const [status, setStatus] = useState<Status>({ kind: "", text: "" });
-
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (!ENDPOINT) {
-      setStatus({
-        kind: "is-error",
-        text: `The form isn't connected yet. Please call ${phone} or email ${email}.`,
-      });
-      return;
-    }
-    const form = e.currentTarget;
-    setStatus({ kind: "is-sending", text: "Sending…" });
-    try {
-      const res = await fetch(ENDPOINT, { method: "POST", body: new FormData(form) });
-      if (!res.ok) throw new Error(String(res.status));
-      form.reset();
-      setStatus({ kind: "is-success", text: "Thank you! We'll be in touch soon." });
-    } catch {
-      setStatus({
-        kind: "is-error",
-        text: `Sorry, that didn't send. Please call ${phone} or email ${email}.`,
-      });
-    }
-  }
+  const fallback = `Please call ${phone} or email ${email}.`;
+  const { status, sending, formProps } = useKitForm({
+    endpoint: process.env.NEXT_PUBLIC_CONTACT_ENDPOINT,
+    success: "Thank you! We'll be in touch soon.",
+    error: `Sorry, that didn't send. ${fallback}`,
+    notConnected: `The form isn't connected yet. ${fallback}`,
+  });
 
   return (
-    <form onSubmit={onSubmit} noValidate={false}>
+    <form {...formProps}>
       <div className="row">
         <div className="col-lg-6 mb-3">
           <label className="visually-hidden" htmlFor="contact-name">
@@ -72,10 +50,8 @@ export default function ContactForm({ phone, email }: { phone: string; email: st
       </div>
       {/* Spam trap: people never see or fill this field */}
       <input type="text" name="website" tabIndex={-1} autoComplete="off" hidden />
-      <input type="submit" className="btn btn-black" value="Request a quote" />
-      <p className={`kit-form-status ${status.kind}`} role="status" aria-live="polite">
-        {status.text}
-      </p>
+      <input type="submit" className="btn btn-black" value="Request a quote" disabled={sending} aria-busy={sending || undefined} />
+      <FormStatusLine status={status} />
     </form>
   );
 }

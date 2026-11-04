@@ -3,6 +3,9 @@ title: Kitchen remodel
 category: Renovation
 location: Town one
 year: 2025
+layout: carousel
+client: Private homeowner
+link: ''
 order: 1
 cover: /uploads/placeholders/photos/kitchen-1.jpg
 photos:

@@ -3,6 +3,9 @@ title: Office fit-out
 category: Commercial
 location: Town three
 year: 2023
+layout: side
+client: Local business
+link: ''
 order: 6
 cover: /uploads/placeholders/photos/office-1.jpg
 photos:

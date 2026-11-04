@@ -37,28 +37,30 @@ export default function About({ about, site }: { about: HomeContent["about"]; si
               </p>
             ))}
 
-            <div className="row my-5">
-              {about.credentials.length > 0 && (
-                <div className="col-lg-6 mb-4" data-reveal="fade-up">
-                  <h3 className="text-black h5 fw-bold mb-3">Licensed and insured</h3>
-                  <ul className="list-unstyled about-list">
-                    {about.credentials.map((c) => (
-                      <li key={c}>{c}</li>
-                    ))}
-                  </ul>
+            {site.serviceAreas.length > 0 && (
+              <p data-reveal="fade-up">
+                <strong>Areas we serve:</strong> {site.serviceAreas.join(", ")}
+              </p>
+            )}
+
+            {about.credentials.length > 0 && (
+              <div className="row my-5">
+                <div className="col-12">
+                  <h3 className="text-black h5 fw-bold mb-3" data-reveal="fade-up">
+                    Licences and memberships
+                  </h3>
                 </div>
-              )}
-              {site.serviceAreas.length > 0 && (
-                <div className="col-lg-6 mb-4" data-reveal="fade-up">
-                  <h3 className="text-black h5 fw-bold mb-3">Areas we serve</h3>
-                  <ul className="list-unstyled about-list">
-                    {site.serviceAreas.map((a) => (
-                      <li key={a}>{a}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+                {about.credentials.map((c) => (
+                  <div key={c.title} className="col-lg-6">
+                    <div className="work-experience" data-reveal="fade-up">
+                      <h3 className="position">{c.title}</h3>
+                      <span className="company">{c.detail}</span>
+                      <span className="year">{c.year}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

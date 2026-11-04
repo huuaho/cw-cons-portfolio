@@ -57,8 +57,28 @@
   font-weight: 700;
 }
 
+/* Sliding carousel (Bootstrap's carousel look, our own motion: see ProjectPhotos.tsx). */
+.kit-carousel__track {
+  display: flex;
+  transition: transform 0.6s ease-in-out; /* Bootstrap's slide timing */
+}
+.kit-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.kit-carousel:focus-visible {
+  outline: 2px solid var(--brand, #ff2e63);
+  outline-offset: 4px;
+}
+
 /* Project photos come in mixed shapes; a fixed frame stops the carousel jumping. */
-.portfolio-single-inner .carousel-item img {
+.portfolio-single-inner .kit-carousel img {
   aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* The template's blog thumbnails were square; uploads come in any shape. */
+.post-entry .thumb img {
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }

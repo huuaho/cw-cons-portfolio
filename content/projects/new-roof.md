@@ -3,6 +3,9 @@ title: Full roof replacement
 category: Roofing
 location: Town one
 year: 2024
+layout: carousel
+client: Private homeowner
+link: ''
 order: 4
 cover: /uploads/placeholders/photos/roof-1.jpg
 photos:
