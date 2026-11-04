@@ -3,6 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
+export { paragraphs, telHref } from "./format";
+
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
 export type ServiceIconName =
@@ -104,17 +106,4 @@ export function getProjects(): Project[] {
 
 export function getProject(slug: string): Project | undefined {
   return getProjects().find((p) => p.slug === slug);
-}
-
-/** Splits plain text from a textarea into paragraphs on blank lines. */
-export function paragraphs(text: string): string[] {
-  return text
-    .split(/\n\s*\n/)
-    .map((p) => p.trim())
-    .filter(Boolean);
-}
-
-/** tel: link from a display phone number. */
-export function telHref(phone: string): string {
-  return "tel:" + phone.replace(/[^\d+]/g, "");
 }
