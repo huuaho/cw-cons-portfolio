@@ -18,7 +18,7 @@ pnpm lint && pnpm typecheck
 | `content/site.json` | Business details (name, phone, email, address, hours, areas, social links, search text) |
 | `content/home.json` | Home page text and photos (hero, services, our work, about, contact) |
 | `content/projects/*.md` | One file per project (frontmatter only); the filename is the page address |
-| `public/uploads/` | Photos uploaded through Pages CMS; `placeholders/` holds the stand-in images |
+| `public/uploads/` | Photos uploaded through Pages CMS; `placeholders/photos/` holds stand-in photos from Wikimedia Commons (credits and licences in `PLACEHOLDER-CREDITS.md`; replace or credit before launch) |
 | `.pages.yml` | The editing forms Pages CMS shows; keep in step with `src/lib/content.ts` |
 | `src/styles/template.css` | The template's stylesheet, unchanged except for absolute font/image paths |
 | `src/styles/site.css` | Our additions |

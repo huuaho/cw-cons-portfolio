@@ -4,10 +4,10 @@ category: Renovation
 location: Town one
 year: 2025
 order: 1
-cover: /uploads/placeholders/project-1.svg
+cover: /uploads/placeholders/photos/kitchen-1.jpg
 photos:
-  - /uploads/placeholders/project-detail.svg
-  - /uploads/placeholders/project-1.svg
+  - /uploads/placeholders/photos/kitchen-1.jpg
+  - /uploads/placeholders/photos/kitchen-2.jpg
 description: |-
   Placeholder project. Describe the job in a sentence or two: what the client wanted and what was built.
 

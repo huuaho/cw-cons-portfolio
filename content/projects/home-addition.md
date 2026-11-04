@@ -4,10 +4,11 @@ category: Addition
 location: Town two
 year: 2025
 order: 2
-cover: /uploads/placeholders/project-2.svg
+cover: /uploads/placeholders/photos/addition-1.jpg
 photos:
-  - /uploads/placeholders/project-detail.svg
-  - /uploads/placeholders/project-2.svg
+  - /uploads/placeholders/photos/addition-1.jpg
+  - /uploads/placeholders/photos/addition-2.jpg
+  - /uploads/placeholders/photos/addition-3.jpg
 description: |-
   Placeholder project. Describe the job in a sentence or two: what the client wanted and what was built.
 

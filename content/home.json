@@ -5,18 +5,42 @@
     "subheading": "Quality construction and renovation across your area. Replace this line with a short description of what you do.",
     "buttonLabel": "Request a quote",
     "buttonAction": "quote",
-    "image": "/uploads/placeholders/hero.svg"
+    "image": "/uploads/placeholders/photos/hero.jpg"
   },
   "services": {
     "heading": "Services",
     "intro": "What we can build for you.",
     "items": [
-      { "title": "Renovations", "description": "A sentence or two about this service. Replace with your own.", "icon": "house" },
-      { "title": "Additions", "description": "A sentence or two about this service. Replace with your own.", "icon": "ruler" },
-      { "title": "Kitchens and bathrooms", "description": "A sentence or two about this service. Replace with your own.", "icon": "bath" },
-      { "title": "Roofing", "description": "A sentence or two about this service. Replace with your own.", "icon": "hard-hat" },
-      { "title": "Concrete and foundations", "description": "A sentence or two about this service. Replace with your own.", "icon": "shovel" },
-      { "title": "Commercial fit-outs", "description": "A sentence or two about this service. Replace with your own.", "icon": "building" }
+      {
+        "title": "Renovations",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "house"
+      },
+      {
+        "title": "Additions",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "ruler"
+      },
+      {
+        "title": "Kitchens and bathrooms",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "bath"
+      },
+      {
+        "title": "Roofing",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "hard-hat"
+      },
+      {
+        "title": "Concrete and foundations",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "shovel"
+      },
+      {
+        "title": "Commercial fit-outs",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "building"
+      }
     ]
   },
   "portfolio": {
@@ -27,9 +51,12 @@
     "heading": "About us",
     "intro": "Who we are and how we work.",
     "story": "Tell visitors about the company: who you are, how long you've been in business and what makes you different.\n\nA second paragraph can cover how you work with clients, from the first quote to the final walkthrough.",
-    "image": "/uploads/placeholders/about.svg",
+    "image": "/uploads/placeholders/photos/about.jpg",
     "yearsInBusiness": 10,
-    "credentials": ["Licensed contractor (licence no. 000000)", "Fully insured"]
+    "credentials": [
+      "Licensed contractor (licence no. 000000)",
+      "Fully insured"
+    ]
   },
   "contact": {
     "heading": "Contact",

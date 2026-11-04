@@ -56,3 +56,9 @@
   min-width: 4.5rem;
   font-weight: 700;
 }
+
+/* Project photos come in mixed shapes; a fixed frame stops the carousel jumping. */
+.portfolio-single-inner .carousel-item img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
