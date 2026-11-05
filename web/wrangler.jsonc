@@ -1,0 +1,29 @@
+{
+  // The site's Worker: static files from out/ plus the editor API (worker/index.ts).
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "douglas-construction-site",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/admin", "/admin/*", "/api/*", "/media/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "douglas-site",
+      // Replace with the id from `wrangler d1 create douglas-site` before the first deploy.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "douglas-site-media" }],
+  "vars": {
+    // Filled in once Cloudflare Access is set up (Zero Trust > Access > Applications).
+    "ACCESS_TEAM_DOMAIN": "",
+    "ACCESS_AUD": ""
+  }
+  // Secrets (wrangler secret put): DEPLOY_HOOK_URL, BUILD_TOKEN.
+}

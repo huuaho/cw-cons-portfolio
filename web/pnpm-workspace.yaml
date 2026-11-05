@@ -1,0 +1,8 @@
+# Only install package versions published at least 7 days ago (minutes).
+minimumReleaseAge: 10080
+
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
+  esbuild: true
+  workerd: true

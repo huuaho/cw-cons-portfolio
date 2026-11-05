@@ -1,6 +1,8 @@
-# Only the placeholder page is published for now.
+# Published: the placeholder page (GitHub Pages, until the domain moves to Cloudflare)
+# and the new site in web/ (built by Cloudflare Workers Builds).
 # Everything else (template mirror, planning notes, saved preview) stays local.
 /*
 !/.gitignore
 !/.github/
 !/under-construction/
+!/web/

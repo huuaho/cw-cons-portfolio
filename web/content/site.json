@@ -1,0 +1,19 @@
+{
+  "companyName": "Douglas Construction Solutions",
+  "logoText": "Douglas",
+  "phone": "(555) 010-0000",
+  "email": "info@example.com",
+  "address": "Your town, State",
+  "showAddressOnMap": true,
+  "hours": "Mon–Fri, 7am–5pm",
+  "serviceAreas": ["Town one", "Town two", "Town three"],
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "google": ""
+  },
+  "seo": {
+    "title": "Douglas Construction Solutions | Construction and renovation",
+    "description": "Douglas Construction Solutions: renovations, additions and construction projects. See our work and request a quote."
+  }
+}

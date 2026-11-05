@@ -1,0 +1,176 @@
+{
+  "hero": {
+    "headline": "Built right,",
+    "headlineEmphasis": "built to last",
+    "subheading": "Quality construction and renovation across your area. Replace this line with a short description of what you do.",
+    "buttonLabel": "Request a quote",
+    "buttonAction": "quote",
+    "image": "/uploads/placeholders/photos/hero.jpg"
+  },
+  "services": {
+    "heading": "Services",
+    "intro": "What we can build for you.",
+    "items": [
+      {
+        "title": "Renovations",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "house"
+      },
+      {
+        "title": "Additions",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "ruler"
+      },
+      {
+        "title": "Kitchens and bathrooms",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "bath"
+      },
+      {
+        "title": "Roofing",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "hard-hat"
+      },
+      {
+        "title": "Concrete and foundations",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "shovel"
+      },
+      {
+        "title": "Commercial fit-outs",
+        "description": "A sentence or two about this service. Replace with your own.",
+        "icon": "building"
+      }
+    ]
+  },
+  "portfolio": {
+    "heading": "Our work",
+    "intro": "A selection of recent projects."
+  },
+  "about": {
+    "heading": "About us",
+    "intro": "Who we are and how we work.",
+    "story": "Tell visitors about the company: who you are, how long you've been in business and what makes you different.\n\nA second paragraph can cover how you work with clients, from the first quote to the final walkthrough.",
+    "image": "/uploads/placeholders/photos/about.jpg",
+    "yearsInBusiness": 10,
+    "credentials": [
+      {
+        "title": "Licensed general contractor",
+        "detail": "State licence no. 000000",
+        "year": "Since 2015"
+      },
+      {
+        "title": "Fully insured",
+        "detail": "General liability and workers' comp",
+        "year": "Current"
+      },
+      {
+        "title": "Member, local builders' association",
+        "detail": "Replace with your memberships",
+        "year": "Since 2018"
+      },
+      {
+        "title": "Certified installer",
+        "detail": "Replace with a manufacturer or trade certification",
+        "year": "2020"
+      }
+    ]
+  },
+  "stats": {
+    "show": true,
+    "heading": "By the numbers",
+    "intro": "A few figures we're proud of.",
+    "items": [
+      {
+        "label": "Projects on schedule",
+        "percent": 98
+      },
+      {
+        "label": "Repeat and referred clients",
+        "percent": 85
+      },
+      {
+        "label": "Finished on budget",
+        "percent": 92
+      },
+      {
+        "label": "Five-star reviews",
+        "percent": 95
+      }
+    ]
+  },
+  "testimonials": {
+    "show": true,
+    "heading": "Testimonials",
+    "intro": "What our clients say.",
+    "items": [
+      {
+        "name": "James Smith",
+        "role": "Kitchen remodel, Town one",
+        "quote": "Placeholder review. Replace with a real quote from a happy client: what you built for them and what they liked about working with you.",
+        "photo": "/uploads/placeholders/people/person-1.svg"
+      },
+      {
+        "name": "Sarah Johnson",
+        "role": "Home addition, Town two",
+        "quote": "Placeholder review. Replace with a real quote from a happy client: what you built for them and what they liked about working with you.",
+        "photo": "/uploads/placeholders/people/person-2.svg"
+      },
+      {
+        "name": "Michael Brown",
+        "role": "Roof replacement, Town one",
+        "quote": "Placeholder review. Replace with a real quote from a happy client: what you built for them and what they liked about working with you.",
+        "photo": "/uploads/placeholders/people/person-3.svg"
+      },
+      {
+        "name": "Emily Davis",
+        "role": "Bathroom renovation, Town three",
+        "quote": "Placeholder review. Replace with a real quote from a happy client: what you built for them and what they liked about working with you.",
+        "photo": "/uploads/placeholders/people/person-4.svg"
+      }
+    ]
+  },
+  "news": {
+    "show": true,
+    "heading": "News",
+    "intro": "Updates from the job site.",
+    "items": [
+      {
+        "title": "Placeholder update: a new project begins",
+        "date": "2026-10-01",
+        "author": "Douglas",
+        "category": "Projects",
+        "image": "/uploads/placeholders/photos/addition-2.jpg",
+        "link": ""
+      },
+      {
+        "title": "Placeholder update: kitchen finished",
+        "date": "2026-09-12",
+        "author": "Douglas",
+        "category": "Kitchens",
+        "image": "/uploads/placeholders/photos/kitchen-2.jpg",
+        "link": ""
+      },
+      {
+        "title": "Placeholder update: roofing season",
+        "date": "2026-08-20",
+        "author": "Douglas",
+        "category": "Roofing",
+        "image": "/uploads/placeholders/photos/roof-2.jpg",
+        "link": ""
+      },
+      {
+        "title": "Placeholder update: new driveway",
+        "date": "2026-07-30",
+        "author": "Douglas",
+        "category": "Concrete",
+        "image": "/uploads/placeholders/photos/driveway-3.jpg",
+        "link": ""
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Contact",
+    "intro": "Tell us about your project and we'll get back to you with a quote."
+  }
+}
