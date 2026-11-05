@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "@/styles/template.css";
 import "@/styles/site.css";
 import { getHome, getSite } from "@/lib/content";
+import { IS_PREVIEW, page } from "@/lib/base-path";
 import { SITE_URL } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
@@ -13,14 +14,16 @@ export function generateMetadata(): Metadata {
     title: { default: site.seo.title, template: `%s | ${site.companyName}` },
     description: site.seo.description,
     authors: [{ name: site.companyName }],
-    alternates: { canonical: "/" },
+    alternates: { canonical: page("/") },
+    // The preview at /test-website stays out of search results until launch.
+    ...(IS_PREVIEW && { robots: { index: false, follow: false } }),
     // Social previews (the template's og: and twitter: tags).
     openGraph: {
       type: "website",
       siteName: site.companyName,
       title: site.seo.title,
       description: site.seo.description,
-      url: "/",
+      url: page("/"),
       locale: "en_US",
       images: home.hero.image ? [{ url: home.hero.image, alt: site.companyName }] : undefined,
     },

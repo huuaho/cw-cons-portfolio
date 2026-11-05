@@ -1,9 +1,10 @@
 "use client";
 
-// The client's website editor at /admin (behind Cloudflare Access). Edits are saved to the
+// The client's website editor at <base path>/admin (behind Cloudflare Access). Edits are saved to the
 // database straight away; Publish rebuilds the public site with them (about 1–2 minutes).
 import { useCallback, useEffect, useState } from "react";
 import { HOME_FIELDS, PROJECT_FIELDS, SITE_FIELDS, type Field } from "@/admin/schema";
+import { page } from "@/lib/base-path";
 import { api } from "./api";
 import FieldEditor from "./FieldEditor";
 
@@ -212,7 +213,7 @@ export default function AdminApp() {
           <div className="small text-body-secondary">Signed in as {content.editor}</div>
         </div>
         <div className="d-flex align-items-center gap-2">
-          <a href="/" target="_blank" rel="noopener" className="btn btn-outline-secondary btn-sm">View live site</a>
+          <a href={page("/")} target="_blank" rel="noopener" className="btn btn-outline-secondary btn-sm">View live site</a>
           <button type="button" className="btn btn-primary" onClick={doPublish} disabled={publish.busy}>
             {publish.busy ? "Publishing…" : "Publish"}
           </button>

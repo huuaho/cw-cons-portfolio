@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProjectDetails from "@/components/ProjectDetails";
+import { page } from "@/lib/base-path";
 import { getProject, getProjects, paragraphs } from "@/lib/content";
 
 export const dynamicParams = false;
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject((await params).slug);
   if (!project) return {};
   const description = paragraphs(project.description)[0];
-  const url = `/projects/${project.slug}/`;
+  const url = page(`/projects/${project.slug}/`);
   return {
     title: project.title,
     description,

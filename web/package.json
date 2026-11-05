@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "dev:worker": "wrangler dev --port 8787",
-    "build": "next build",
-    "build:cf": "node scripts/pull-content.mjs && next build",
+    "build": "next build && node scripts/place-site.mjs",
+    "build:cf": "node scripts/pull-content.mjs && next build && node scripts/place-site.mjs",
     "deploy": "wrangler deploy",
     "db:migrate:local": "wrangler d1 migrations apply DB --local",
     "db:seed:local": "mkdir -p .wrangler && node scripts/seed-content.mjs > .wrangler/seed.sql && wrangler d1 execute DB --local --file .wrangler/seed.sql",

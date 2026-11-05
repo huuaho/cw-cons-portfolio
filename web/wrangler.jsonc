@@ -8,7 +8,9 @@
     "directory": "./out",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/admin", "/admin/*", "/api/*", "/media/*"]
+    // Every request goes through the Worker: it guards the editor, serves /api and /media, and
+    // while the site is a preview (site-path.json) sends unknown addresses to the placeholder.
+    "run_worker_first": true
   },
   "d1_databases": [
     {

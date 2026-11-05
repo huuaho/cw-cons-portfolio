@@ -1,4 +1,5 @@
 // Site address and schema.org data for search engines (the template's JSON-LD block).
+import { page } from "@/lib/base-path";
 import type { HomeContent, SiteSettings } from "@/lib/content";
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://douglasconstructionsolutions.com";
@@ -9,7 +10,7 @@ export function structuredData(site: SiteSettings, home: HomeContent) {
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     name: site.companyName,
-    url: SITE_URL + "/",
+    url: SITE_URL + page("/"),
     description: site.seo.description,
     telephone: site.phone,
     email: site.email,

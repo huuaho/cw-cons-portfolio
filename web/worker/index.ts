@@ -1,10 +1,13 @@
 // The site's Worker. Serves the static site (out/) and adds:
-//   /admin/*            the editor page, only for people Cloudflare Access let in
+//   <base>/admin/*      the editor page, only for people Cloudflare Access let in
 //   /api/admin/*        read and save content (D1), upload photos (R2), publish (deploy hook)
 //   /api/content/export everything the build needs, for the build only (BUILD_TOKEN)
 //   /media/*            uploaded photos from R2
-// Anything else is a static file.
+// Anything else is a static file. While site-path.json has a base path (the preview at
+// /test-website), the placeholder holds the root: other addresses that aren't files are sent
+// to / with a temporary redirect, and the preview carries noindex.
 import { createRemoteJWKSet, jwtVerify } from "jose";
+import { basePath } from "../site-path.json";
 import { HOME_FIELDS, PROJECT_FIELDS, SITE_FIELDS, blank, clean, slugify } from "../src/admin/schema";
 
 interface Env {
@@ -178,6 +181,14 @@ async function adminApi(request: Request, env: Env, path: string, who: string): 
 
 /* ---------------------------------------------------------------- entry */
 
+const ADMIN = `${basePath}/admin`;
+
+function withHeaders(res: Response, extra: Record<string, string>) {
+  const headers = new Headers(res.headers);
+  for (const [k, v] of Object.entries(extra)) headers.set(k, v);
+  return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
@@ -201,21 +212,25 @@ export default {
       return json(await allContent(env));
     }
 
-    if (path === "/admin" || path.startsWith("/admin/") || path.startsWith("/api/admin/")) {
+    if (path === ADMIN || path.startsWith(`${ADMIN}/`) || path.startsWith("/api/admin/")) {
       const who = await editor(request, env);
       if (!who) return new Response("Forbidden: sign in through the website's login.", { status: 403 });
       if (path.startsWith("/api/admin/")) {
         if (request.method !== "GET" && request.headers.get("x-requested-with") !== "admin") return fail("Bad request", 400);
         return adminApi(request, env, path.slice("/api/admin/".length), who);
       }
-      const res = await env.ASSETS.fetch(request);
-      const headers = new Headers(res.headers);
-      headers.set("cache-control", "no-store");
-      headers.set("x-robots-tag", "noindex");
-      return new Response(res.body, { status: res.status, headers });
+      return withHeaders(await env.ASSETS.fetch(request), { "cache-control": "no-store", "x-robots-tag": "noindex" });
     }
 
     if (path.startsWith("/api/")) return fail("Not found", 404);
-    return env.ASSETS.fetch(request);
+    if (!basePath) return env.ASSETS.fetch(request);
+
+    // Preview mode.
+    if (path === basePath || path.startsWith(`${basePath}/`)) {
+      return withHeaders(await env.ASSETS.fetch(request), { "x-robots-tag": "noindex" });
+    }
+    const res = await env.ASSETS.fetch(request);
+    if (res.status === 404) return new Response(null, { status: 302, headers: { location: "/", "cache-control": "no-store" } });
+    return res;
   },
 } satisfies ExportedHandler<Env>;

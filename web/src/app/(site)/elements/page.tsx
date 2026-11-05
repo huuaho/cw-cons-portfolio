@@ -4,6 +4,7 @@ import Accordion from "@/components/elements/Accordion";
 import Gallery from "@/components/elements/Gallery";
 import SampleForm from "@/components/elements/SampleForm";
 import VideoLink from "@/components/elements/VideoLink";
+import { page } from "@/lib/base-path";
 
 // The template's elements.html: a showcase of the interface pieces the theme supports. Kept as a
 // reference for building new sections; not in the menu and hidden from search engines.
@@ -11,8 +12,8 @@ export const metadata: Metadata = {
   title: "Elements",
   description: "Interface elements: accordion, photo gallery, video, lists, form, social icons and slider.",
   robots: { index: false, follow: false },
-  alternates: { canonical: "/elements/" },
-  openGraph: { url: "/elements/" },
+  alternates: { canonical: page("/elements/") },
+  openGraph: { url: page("/elements/") },
 };
 
 const P = "/uploads/placeholders/photos/";
