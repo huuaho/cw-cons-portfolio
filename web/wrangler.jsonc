@@ -26,8 +26,8 @@
   "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "douglas-site-media" }],
   "vars": {
     // Filled in once Cloudflare Access is set up (Zero Trust > Access > Applications).
-    "ACCESS_TEAM_DOMAIN": "",
-    "ACCESS_AUD": ""
+    "ACCESS_TEAM_DOMAIN": "flat-term-123f.cloudflareaccess.com",
+    "ACCESS_AUD": "8692eda478c30edf5ccb3afaf6003703116aaec0122dc69a34ea7a82b1238a1d"
   }
   // Secrets (wrangler secret put): DEPLOY_HOOK_URL, BUILD_TOKEN.
 }
