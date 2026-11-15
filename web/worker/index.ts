@@ -194,6 +194,12 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
+    // One address for the site: www.<domain> goes to <domain>, keeping the path.
+    if (url.hostname.startsWith("www.")) {
+      url.hostname = url.hostname.slice("www.".length);
+      return Response.redirect(url.toString(), 301);
+    }
+
     if (path.startsWith("/media/")) {
       const key = decodeURIComponent(path.slice("/media/".length));
       const object = await env.MEDIA.get(key);
