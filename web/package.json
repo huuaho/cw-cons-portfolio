@@ -2,6 +2,7 @@
   "name": "douglas-construction-web",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@12.21.0",
   "scripts": {
     "dev": "next dev",
     "dev:worker": "wrangler dev --port 8787",
