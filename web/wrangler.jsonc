@@ -2,6 +2,9 @@
   // The site's Worker: static files from out/ plus the editor API (worker/index.ts).
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "douglas-construction-site",
+  // The client's Cloudflare account (Porcinollc@gmail.com's Account). Pinned so Wrangler
+  // never creates or deploys anything in another account the signed-in user can see.
+  "account_id": "ad5d62a9e75ee9245948edbf271b0d30",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
   "assets": {
@@ -16,8 +19,7 @@
     {
       "binding": "DB",
       "database_name": "douglas-site",
-      // Replace with the id from `wrangler d1 create douglas-site` before the first deploy.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "b9438381-61ea-4c48-b61e-db6c369af858",
       "migrations_dir": "migrations"
     }
   ],
