@@ -7,6 +7,12 @@
   "account_id": "ad5d62a9e75ee9245948edbf271b0d30",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
+  // The site's addresses. Listed here (not only in the dashboard) so every deploy keeps them;
+  // the Worker sends www. to the bare domain.
+  "routes": [
+    { "pattern": "douglasconstructionsolutions.com", "custom_domain": true },
+    { "pattern": "www.douglasconstructionsolutions.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./out",
     "binding": "ASSETS",
